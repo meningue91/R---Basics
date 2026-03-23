@@ -13,9 +13,10 @@ A table of descriptive statistics was created and is printed in the R script for
 ### Graphics 
 The following graphic expresses the time series of the Gini Index for the 5 most equal countries and the 5 least equal countries. 
 
-![image alt] (https://github.com/meningue91/R---Basics/blob/4499228eb32a3df8d8addb3ed5993be06b5b833b/Images/Gini_index_mean.png)
+![image alt](https://github.com/meningue91/R---Basics/blob/4499228eb32a3df8d8addb3ed5993be06b5b833b/Images/Gini_index_mean.png)
 
 The following graphic expresses a regression plot of the association between log GDP per capita and the Gini Index
+![image alt](https://github.com/meningue91/R---Basics/blob/6b85ca040fed7e80e3626f936e1744b8be607e0d/Images/GDPxGini.png)
 
 ### Econometric inference
 
