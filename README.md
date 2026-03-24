@@ -19,5 +19,6 @@ The following graphic expresses a regression plot of the association between log
 ![image alt](https://github.com/meningue91/R---Basics/blob/6b85ca040fed7e80e3626f936e1744b8be607e0d/Images/GDPxGini.png)
 
 ### Econometric inference
+The result demonstrates the negative association between the Gini index and the natural logarithm of # GDP per capita, such that, in the model with linear imputation of the Gini, a one-unit increase in the values of said index—which for this study has a domain from 0 to 100—is negatively associated with a 5.27% drop in GDP per capita, given that the model used is log-lin. For the model without imputation, this result was 5.52%. Finally, for the model with spline imputation, the coefficient measuring the association between the inequality index and GDP per capita was # 9.03e-5, i.e., null.
 
 ### Conclusion
