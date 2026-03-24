@@ -249,18 +249,6 @@ ggsave("GDPxGini.png")
 # Regressões simples
 #-------------------------------------------------------------------------------
 
-# Utilizando fixest, estime o seguinte modelo:
-#   
-#   Gini = β0 + β1 log(GDP per capita)
-# 
-# Você deverá:
-#   
-#   Estimar o modelo
-# 
-# Reportar os coeficientes
-# 
-# Interpretar o sinal e magnitude de β1
-
 r <- feols(gdp_log~gini, data = df)
 
 s <- feols(log(gdp_imputado)~gini_imputado, data = df)
