@@ -6,207 +6,6 @@
 #
 # DATA DE CRIAÇÃO: 11/01/2025
 #-------------------------------------------------------------------------------
-# Questão:
-
-# Exercício da Semana 1
-# Exploratory Data Analysis of Global Income Inequality
-# Contexto
-# 
-# A desigualdade de renda é um dos principais indicadores socioeconômicos utilizados para avaliar o desenvolvimento econômico e o bem-estar social. Economistas frequentemente investigam como a desigualdade evolui ao longo do tempo e como ela se relaciona com o nível de renda dos países.
-# 
-# Utilizando dados públicos do World Bank, você deverá realizar uma análise exploratória da desigualdade de renda entre países.
-# 
-# Objetivo do exercício
-# 
-# Realizar uma análise exploratória de dados (EDA) para investigar a relação entre:
-#   
-#   nível de renda dos países
-# 
-# desigualdade de renda
-# 
-# evolução temporal da desigualdade
-# 
-# A análise deve ser realizada exclusivamente em R.
-# 
-# Base de dados
-# 
-# Utilize indicadores disponíveis no World Development Indicators.
-# 
-# Baixe dados para todos os países disponíveis entre 2000 e 2022.
-# 
-# Indicadores obrigatórios:
-#   
-#   Indicador	Descrição
-# Gini Index	medida de desigualdade
-# GDP per capita	renda média
-# Population	população total
-# 
-# Você deverá baixar os dados manualmente ou via API.
-# 
-# Tarefas
-# 1 — Estrutura do projeto
-# 
-# Crie um repositório no GitHub com a seguinte estrutura:
-#   
-#   income-inequality-analysis
-# 
-# data
-# raw
-# clean
-# 
-# scripts
-# 
-# figures
-# 
-# README.md
-# 
-# O código deve ser organizado em scripts separados.
-# 
-# 2 — Limpeza e organização dos dados
-# 
-# Construa um script responsável por:
-#   
-#   Importar os datasets.
-# 
-# Padronizar nomes de países.
-# 
-# Manter apenas observações entre 2000 e 2022.
-# 
-# Tratar valores faltantes.
-# 
-# Construir um dataset final contendo:
-#   
-#   country
-# year
-# gini
-# gdp_per_capita
-# population
-# 
-# Criar uma variável adicional:
-#   
-#   log_gdp_per_capita
-# 
-# O dataset final deve ser salvo na pasta data/clean.
-# 
-# 3 — Análise exploratória
-# 
-# Realize uma análise descritiva contendo:
-#   
-#   Estatísticas básicas
-# 
-# Calcule:
-#   
-#   média
-# 
-# mediana
-# 
-# desvio padrão
-# 
-# mínimo
-# 
-# máximo
-# 
-# para:
-#   
-#   Gini
-# 
-# GDP per capita
-# 
-# 4 — Visualização de dados
-# 
-# Utilizando ggplot2, produza no mínimo três gráficos.
-# 
-# Os gráficos devem responder às seguintes perguntas:
-#   
-#   Gráfico 1
-# 
-# Como a desigualdade evoluiu ao longo do tempo em alguns países selecionados?
-#   
-#   Escolha 3 a 5 países e mostre a evolução do índice de Gini.
-# 
-# Gráfico 2
-# 
-# Existe relação entre renda e desigualdade?
-#   
-#   Construa um scatter plot relacionando:
-#   
-#   GDP per capita
-# Gini index
-# 
-# Inclua uma linha de tendência.
-# 
-# Gráfico 3
-# 
-# Qual é o nível de desigualdade global recente?
-#   
-#   Construa um mapa mundial mostrando o índice de Gini em um ano recente.
-# 
-# Para isso utilize objetos espaciais com sf.
-# 
-# 5 — Regressão simples
-# 
-# Utilizando fixest, estime o seguinte modelo:
-#   
-#   Gini = β0 + β1 log(GDP per capita)
-# 
-# Você deverá:
-#   
-#   Estimar o modelo
-# 
-# Reportar os coeficientes
-# 
-# Interpretar o sinal e magnitude de β1
-# 
-# 6 — Interpretação econômica
-# 
-# Escreva um pequeno texto (5–10 linhas) respondendo:
-#   
-#   Existe evidência de que países mais ricos são menos desiguais?
-#   
-#   O padrão é consistente entre regiões?
-#   
-#   A relação parece forte ou fraca?
-#   
-#   7 — Produtos finais
-# 
-# Ao final da semana você deverá entregar:
-#   
-#   1 — Repositório GitHub
-# 
-# Com:
-#   
-#   scripts
-# 
-# gráficos
-# 
-# dataset limpo
-# 
-# README explicando o projeto
-# 
-# 2 — README
-# 
-# O README deve conter:
-#   
-#   descrição do projeto
-# 
-# fonte dos dados
-# 
-# principais gráficos
-# 
-# breve interpretação dos resultados
-# 
-# 3 — Post LinkedIn
-# 
-# Prepare um pequeno post apresentando:
-#   
-#   objetivo da análise
-# 
-# ferramentas utilizadas
-# 
-# um dos gráficos produzidos
-# 
-# link para o GitHub
-#-------------------------------------------------------------------------------
 # Ajuste do banco de dados 
 #-------------------------------------------------------------------------------
 #
@@ -301,12 +100,12 @@ df_pop <- rows_pop |>
   map(set_names, cols_pop) |>
   bind_rows()
 
-# O fluxo desse processo foi o estabelecimento do endereço a ser feita a requisição, estabelecimento de um requisição a ser feita
+# O fluxo desse processo foi o estabelecimento do endereço a ser feito, a requisição, estabelecimento de uma requisição a ser feita
 # filtragem dos dados da requisição e execução da requisição. Em seguida, foi criado o objeto xml com toda a árvore para, no passo seguinte, extrair
 # o conteúdo de todos seus nós.O passo subsequente se caracteriza por, dentro de cada nó, tomar os nó filho e, em seguida,
 # transformar o resultado em uma linha. Note que se trata apenas das linhas puras, sem qualquer nomenclatura, o que é ajustado 
 # ao tormar-se o nome de cada uma das variáveis ao selecionar-se o primeiro no do objeto com toda a árvore, buscar no nome do primeiro
-# ramo e, por fim estabelecer isso como nomes em col. Finalmente, o dataframe é criado em df ao estabelecer-se o nome das 
+# ramo e, por fim, estabelecer isso como nomes em col. Finalmente, o dataframe é criado em df ao estabelecer-se o nome das 
 # colunas e empilhar-se as linhas.
 # Requisição à API → Receber XML → Extrair nós → Transformar em lista → Nomear colunas → Criar dataframe.
 
@@ -474,11 +273,11 @@ etable(s)
 
 etable(t)
 
-# O resultado demonstra a associação negativa entre o índice de gini e o logaritmo natural do
-# gdp per capita, de tal forma que, no modelo em que houve imputação linear do gini, um aumento de 
+# O resultado demonstra a associação negativa entre o índice de Gini e o logaritmo natural do
+# gdp per capita, de tal forma que, no modelo em que houve imputação linear do Gini, um aumento de 
 # uma unidade nos valores do dito índice, que para esse estudo possui um domínio que vai de 0 a 100, 
-# esta associado negativamente a uma queda no gdp per capita de 5,27%, dado que o modelo utilizando
-# é o log-lin. Para o modelo sem imputação, esse resultado foi de 5,52%. Por fim, o modelo com  
+# está associado negativamente a uma queda no gdp per capita de 5,27%, dado que o modelo utilizando
+# é o log-lin. No modelo sem imputação, esse resultado foi de 5,52%. Por fim, o modelo com  
 # imputação por spline, o coeficiente que mensura a associação entre o índice de desigualdade e o 
 # gdp per capita foi de 9,03e-5, ou seja, nulo. 
 
